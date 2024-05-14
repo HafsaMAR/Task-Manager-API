@@ -1,0 +1,8 @@
+Class User
+	id
+	name
+	username
+	email
+	password
+	phone
+	tasks forgein key

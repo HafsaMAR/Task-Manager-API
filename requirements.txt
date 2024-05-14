@@ -1,0 +1,9 @@
+Flask
+flask-bcrypt
+flask-login
+requests
+Flask-Cors
+Flask-Mail
+SQLAlchemy
+mysqlclient
+Flask-SQLAlchemy
