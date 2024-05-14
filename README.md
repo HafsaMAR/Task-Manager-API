@@ -1,4 +1,4 @@
-# My Flask Application
+# My Task Manager
 
 ## Description
 
@@ -9,7 +9,7 @@ This is a simple Flask application that manage tasks
 1. Clone this repository:
 
     ```
-    git clone https://github.com/your_username/your_repo.git
+    git clone https://github.com/HafsaMAR/Task-Manager-API.git
     ```
 
 2. Navigate to the project directory:
