@@ -38,7 +38,7 @@ This is a simple Flask application that manage tasks
     pip3 install -r requirements.txt
     ```
     ```
-    mysql -u username -p < setup.sql
+    mysql -u username -p < sql_setup.sql
     ```
 
 6. Run the Flask application:
