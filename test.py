@@ -38,7 +38,12 @@ class UserTestCase(BestTestCase):
             db.session.add(user)
             db.session.commit()
 
-            task = Task(owner_id=user.id, title="Test the Task")
+            # define the todolist of the user
+            todo_list = TodoList(title="jane's Todo List", owner_id=user.id)
+            db.session.add(todo_list)
+            db.session.commit()
+
+            task = Task(owner_id=user.id, title="Test the Task", todo_id=todo_list.id)
             db.session.add(task)
             db.session.commit()
 
@@ -52,7 +57,12 @@ class TaskTestCase(BestTestCase):
             db.session.add(user)
             db.session.commit()
 
-            task = Task(owner_id=user.id, title="Test the Task")
+            # define the todolist of the user
+            todo_list = TodoList(title="jane's Todo List", owner_id=user.id)
+            db.session.add(todo_list)
+            db.session.commit()
+
+            task = Task(owner_id=user.id, todo_id=todo_list.id, title="Test the Task")
             db.session.add(task)
             db.session.commit()
 
@@ -60,6 +70,7 @@ class TaskTestCase(BestTestCase):
             queried_task = Task.query.first()
             self.assertEqual(queried_task.title, "Test the Task")
             self.assertEqual(queried_task.owner.id, user.id)
+            self.assertEqual(queried_task.todo_list.id, todo_list.id)
     
 
     def test_task_history(self):
@@ -68,7 +79,12 @@ class TaskTestCase(BestTestCase):
             db.session.add(user)
             db.session.commit()
 
-            task = Task(owner_id=user.id, title="Test the Task")
+            # define the todolist of the user
+            todo_list = TodoList(title="jane's Todo List", owner_id=user.id)
+            db.session.add(todo_list)
+            db.session.commit()
+
+            task = Task(owner_id=user.id, todo_id=todo_list.id, title="Test the Task")
             db.session.add(task)
             db.session.commit()
 
